@@ -1,0 +1,42 @@
+<h2>Address</h2>
+
+<form (ngSubmit)="onSubmit()" [formGroup]="addressForm" novalidate>
+  <div class="form-control">
+    <label>Name:</label>
+    <input type="text" formControlName="name" />
+    <p *ngIf="addressForm.controls.name.errors && addressForm.controls.name.touched" class="validation-error">
+      Name is required.
+    </p>
+  </div>
+
+  <h3>Address Details</h3>
+
+  <div class="form-control">
+    <label>Zip:</label>
+    <input type="text" formControlName="zip" />
+    <p *ngIf="addressForm.controls.zip.errors && addressForm.controls.zip.touched" class="validation-error">
+      Zip is required, have a max length of 5 and must start with "ABC".
+    </p>
+  </div>
+
+  <div class="form-control">
+    <label>Street:</label>
+    <input type="text" formControlName="street" />
+    <p *ngIf="addressForm.controls.street.errors && addressForm.controls.street.touched" class="validation-error">
+      Street is required.
+    </p>
+  </div>
+
+  <div class="form-control">
+    <label>Country:</label>
+    <select formControlName="country">
+      <option [value]="country" *ngFor="let country of countries">{{country}}</option>
+    </select>
+    <p *ngIf="addressForm.controls.country.errors && addressForm.controls.country.touched" class="validation-error">
+      Country is required.
+    </p>
+  </div>
+
+  <button type="submit" [disabled]="!addressForm.valid" [innerHTML]="!!address ? 'Update' : 'Submit'"></button>
+  <button type="reset" (click)="cancelEdit.emit()" [disabled]="!address">Cancel</button>
+</form>

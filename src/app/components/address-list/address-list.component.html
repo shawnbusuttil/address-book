@@ -1,0 +1,6 @@
+<ul>
+  <li *ngFor="let address of addresses" (click)="editAddress.emit(address)">
+    <!-- can potentially be its own component also -->
+    <p>{{address.name}} lives on {{ address.addressDetails.street}}, {{address.addressDetails.zip}} in {{address.addressDetails.country}}.</p>
+  </li>
+</ul>

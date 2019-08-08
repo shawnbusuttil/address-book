@@ -1,0 +1,4 @@
+<div class="address-book">
+  <address-form [address]="currentAddress" [addressCount]="(service.addressBook$ | async).length" (submitAddress)="submitAddress($event)" (cancelEdit)="cancelEdit()"></address-form>
+  <address-list [addresses]="service.addressBook$ | async" (editAddress)="editAddress($event)"></address-list>
+</div>

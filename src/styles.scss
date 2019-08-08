@@ -1,0 +1,24 @@
+body {
+  font-family: "Open Sans", sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+}
+
+button {
+  border: none;
+  outline: none;
+  padding: 10px;
+  cursor: pointer;
+  display: inline-block;
+}
+
+select {
+  height: 24px;
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+}
